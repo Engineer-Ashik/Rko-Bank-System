@@ -14,41 +14,61 @@
     <main>
         <section>
         </br>
+        <!--THREE DIVS-->
             <div class="grid grid-cols-3 gap-4">
 
+                <!--DEPOSIT-->
             <div class="bg-violet-600 text-yellow-100 text-center font-bold text-4xl rounded-2xl p-10 mx-6 w-auto">
                 <h4>Deposit</h4></br>
                 <h5>$<span id="deposit-dollar">00</span></h5>
             </div>
 
+                <!--WITHDRAW-->
             <div class="bg-blue-600 text-yellow-100 text-center font-bold text-4xl rounded-2xl p-10 mx-6 w-auto">
                 <h4>Withdraw</h4></br>
                 <h5>$<span id="withdraw-dollar">00</span></h5>
             </div>
 
+                <!--BALANCE-->
             <div class="bg-sky-400 text-yellow-100 text-center font-bold text-4xl rounded-2xl p-10 mx-6 w-auto">
                 <h4>Balance</h4></br>
                 <h5>$<span id="balance-dollar">00</span></h5>
             </div>
-
             </div>
-            
+
+
+            <!--PLEASE DIV-->
             <div class="grid grid-cols-2 gap-4 mt-10">
-            <div class="bg-green-500 text-yellow-100 text-center font-bold text-5xl rounded-2xl p-14 mx-6">
+                
+                <!--PLEASE DEPOSIT-->
+            <div class="bg-green-500 text-center font-bold text-5xl rounded-2xl p-14 mx-6">
                 <h4 class="text-gray-600">Please-Deposit</h4>
-                <input id="Please-Deposit-id" class="text-black text-xl w-2/3" type="text" placeholder="Enter your Deposit Amount...">
+                <input id="Please-Deposit-id" class="text-black text-xl w-auto" type="text" placeholder="Enter your Deposit Amount...">
                 <button id="btn-deposit" class="font-bold text-xl bg-blue-900 text-slate-300 p-4 rounded-xl hover:bg-orange-600">Deposit</button>
             </div>
 
+               <!--PLEASE WITHDRAW-->
             <div class="bg-yellow-500 text-center font-bold text-5xl rounded-2xl p-14 mx-6">
                 <h4 class="text-neutral-800">Please-Withdraw</h4>
-                <input id="Please-Withdraw-id" class="text-black text-xl w-2/3" type="text" placeholder="Enter your Withdraw Amount...">
+                <input id="Please-Withdraw-id" class="text-black text-xl w-auto" type="text" placeholder="Enter your Withdraw Amount...">
             <button id="btn-withdraw" class="font-bold text-xl bg-red-800 text-slate-300 p-4 rounded-xl hover:bg-black">withdraw</button>
             </div>
 
         </div>
         </section>
     </main>
-    <script src=""></script>
+
+    <script>
+        //PLEASE DEPOSIT
+        document.getElementById('btn-deposit').addEventListener('click', function deposit(){
+            const depoinput = document.getElementById('Please-Deposit-id');
+            const depoinputValue = depoinput.value;
+            const depoinputValuefloat = parseFloat(depoinputValue);
+
+            const depositdollar = document.getElementById('deposit-dollar');
+            depositdollar.innerText = depoinputValuefloat;
+
+        })
+    </script>
 </body>
 </html>
