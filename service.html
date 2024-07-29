@@ -59,16 +59,48 @@
     </main>
 
     <script>
-        //PLEASE DEPOSIT
+
+        //Deposit
         document.getElementById('btn-deposit').addEventListener('click', function deposit(){
             const depoinput = document.getElementById('Please-Deposit-id');
             const depoinputValue = depoinput.value;
             const depoinputValuefloat = parseFloat(depoinputValue);
+            depoinput.value ='';
 
-            const depositdollar = document.getElementById('deposit-dollar');
-            depositdollar.innerText = depoinputValuefloat;
+            const deposit = document.getElementById('deposit-dollar');
+            const deposittext = deposit.innerText;
+            const deposittextfloat = parseFloat(deposittext);
+            const deposittextCurrent =  deposittextfloat + depoinputValuefloat;
+            deposit.innerText = deposittextCurrent;
+
+            const balance = document.getElementById('balance-dollar');
+            const balancetext = balance.innerText;
+            const balancefloat = parseFloat(balancetext);
+            const balanceTotal = balancefloat + depoinputValuefloat;
+            balance.innerText = balanceTotal;
 
         })
+
+        //Withdraw
+        document.getElementById('btn-withdraw').addEventListener('click', function withdraw(){
+            const withinput = document.getElementById('Please-Withdraw-id');
+            const withinputValue = withinput.value;
+            const withinputValuefloat = parseFloat(withinputValue);
+            withinput.value = '';
+
+            const withdraw = document.getElementById('withdraw-dollar');
+            const withdrawtext = withdraw.innerText;
+            const withdrawtextfloat = parseFloat(withdrawtext);
+            const withdrawCurrent = withdrawtextfloat + withinputValuefloat;
+            withdraw.innerText = withdrawCurrent;
+
+            const balance = document.getElementById('balance-dollar');
+            const balancetext = balance.innerText;
+            const balancefloat = parseFloat(balancetext);
+            const balancetotal = balancefloat - withinputValuefloat;
+            balance.innerText = balancetotal;
+        })
+
     </script>
 </body>
 </html>
