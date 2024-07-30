@@ -65,6 +65,12 @@
             const depoinput = document.getElementById('Please-Deposit-id');
             const depoinputValue = depoinput.value;
             const depoinputValuefloat = parseFloat(depoinputValue);
+
+            if(isNaN(depoinputValuefloat)){
+                alert('Please Provide A Valid Amount');
+                depoinput.value ='';
+                return;
+            }
             depoinput.value ='';
 
             const deposit = document.getElementById('deposit-dollar');
@@ -86,19 +92,35 @@
             const withinput = document.getElementById('Please-Withdraw-id');
             const withinputValue = withinput.value;
             const withinputValuefloat = parseFloat(withinputValue);
+            
+            if(isNaN(withinputValuefloat)){
+                alert('Please enter a valid amount');
+                withinput.value = "";
+                return;
+            }
+
             withinput.value = '';
 
             const withdraw = document.getElementById('withdraw-dollar');
             const withdrawtext = withdraw.innerText;
             const withdrawtextfloat = parseFloat(withdrawtext);
-            const withdrawCurrent = withdrawtextfloat + withinputValuefloat;
-            withdraw.innerText = withdrawCurrent;
+
 
             const balance = document.getElementById('balance-dollar');
             const balancetext = balance.innerText;
             const balancefloat = parseFloat(balancetext);
+
+            if(withinputValuefloat > balancefloat){
+                alert('Insuficient balance');
+                return;
+            }
+
+            const withdrawCurrent = withdrawtextfloat + withinputValuefloat;
+            withdraw.innerText = withdrawCurrent;
+
             const balancetotal = balancefloat - withinputValuefloat;
             balance.innerText = balancetotal;
+
         })
 
     </script>
