@@ -12,6 +12,8 @@
     </header>
 
     <main>
+
+        
         <section>
         </br>
         <!--THREE DIVS-->
@@ -62,29 +64,36 @@
 
         //Deposit
         document.getElementById('btn-deposit').addEventListener('click', function deposit(){
-            const depoinput = document.getElementById('Please-Deposit-id');
-            const depoinputValue = depoinput.value;
-            const depoinputValuefloat = parseFloat(depoinputValue);
+            //const depoinput = document.getElementById('Please-Deposit-id');
+            //const depoinputValue = depoinput.value;
+            //const depoinputValuefloat = parseFloat(depoinputValue);
 
-            if(isNaN(depoinputValuefloat)){
-                alert('Please Provide A Valid Amount');
-                depoinput.value ='';
-                return;
-            }
-            depoinput.value ='';
+            //if(isNaN(depoinputValuefloat)){
+            //   alert('Please Provide A Valid Amount');
+            // depoinput.value ='';
+            //    return;
+            //}
+            //depoinput.value ='';
 
-            const deposit = document.getElementById('deposit-dollar');
-            const deposittext = deposit.innerText;
-            const deposittextfloat = parseFloat(deposittext);
-            const deposittextCurrent =  deposittextfloat + depoinputValuefloat;
-            deposit.innerText = deposittextCurrent;
+            //const deposit = document.getElementById('deposit-dollar');
+            //const deposittext = deposit.innerText;
+            //const deposittextfloat = parseFloat(deposittext);
+            //const deposittextCurrent =  deposittextfloat + depoinputValuefloat;
+            //deposit.innerText = deposittextCurrent;
 
-            const balance = document.getElementById('balance-dollar');
-            const balancetext = balance.innerText;
-            const balancefloat = parseFloat(balancetext);
-            const balanceTotal = balancefloat + depoinputValuefloat;
-            balance.innerText = balanceTotal;
-
+            //const balance = document.getElementById('balance-dollar');
+            //const balancetext = balance.innerText;
+            //const balancefloat = parseFloat(balancetext);
+            //const balanceTotal = balancefloat + depoinputValuefloat;
+            //balance.innerText = balanceTotal;
+            
+            const depo = textValue('deposit-dollar');
+            const pleasedepo = inputValue('Please-Deposit-id');
+            const newdepo = pleasedepo + depo;
+            setValue('deposit-dollar',newdepo);
+            const depobal = textValue('balance-dollar');
+            const totaldepoVal = depobal + pleasedepo ;
+            setValue('balance-dollar',totaldepoVal);
         })
 
         //Withdraw
@@ -120,9 +129,12 @@
 
             const balancetotal = balancefloat - withinputValuefloat;
             balance.innerText = balancetotal;
+            
+            
 
         })
 
     </script>
+    <script src="bankfunc.js"></script>
 </body>
 </html>
