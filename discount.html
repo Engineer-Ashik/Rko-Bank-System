@@ -6,9 +6,38 @@
     <title>Price-Money</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="">
+<body class="bg-slate-700">
     <header></header>
+    <main>
+        <section>
+            <h1 class="text-yellow-50 text-5xl">Discount</h1>
+            <p class="text-yellow-400 text-3xl">Please press the APPLY button for complete the payment</p>
 
-    <main></main>
+            <input id="pay-input" class="text-black bg-white border-2 border-red-600 text-xl rounded-xl m-auto py-2 px-6" placeholder="Enter Your Amount Here...">
+            <button id="pay-id" class="text-white bg-black text-xl rounded-xl m-auto py-2 px-6">Pay</button>
+            <input id="pay-output"  class="text-black bg-orange-100 border-2 border-green-500 text-xl rounded-xl m-auto py-2 px-3" placeholder="Not paid yet">
+        </section>
+    </main>
+        <!--JavaScript-------------------------connection-->
+        <script>
+            const payButton = document.getElementById('pay-id');
+            payButton.addEventListener('click',function pay(){
+                const payinput = document.getElementById('pay-input');
+                const payinputValue = payinput.value;
+                const payinputFloat = parseFloat(payinputValue);
+                payinput.value = '';
+
+                const payoutput = document.getElementById('pay-output');
+                const payoutputValue = payoutput.value;
+                const payoutputFloat = parseFloat(payoutputValue);
+
+                if(payinputFloat <= 0)
+                {alert('Enter Valid amount')}
+                else{
+                    const x =( payinputFloat % 10 );
+                    payoutput.value = x;
+                }
+            })
+        </script>
 </body>
 </html>
