@@ -26,3 +26,9 @@ function setValue(elementId,setin){
     textset.innerText = setin;
     //return 
 }
+
+//next button
+const nextButton = document.getElementById('next');
+nextButton.addEventListener('click', function nextb(){
+    window.location.href="discount.html";
+})
