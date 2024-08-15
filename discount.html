@@ -11,11 +11,20 @@
     <main>
         <section>
             <h1 class="text-yellow-50 text-5xl">Discount</h1>
-            <p class="text-yellow-400 text-3xl">Please press the APPLY button for complete the payment</p>
+            <p class="text-yellow-400 text-3xl py-3">Please press the APPLY button for complete the payment</p>
 
             <input id="pay-input" class="text-black bg-white border-2 border-red-600 text-xl rounded-xl m-auto py-2 px-6" placeholder="Regular Price...">
-            <button id="pay-id" class="text-white bg-black text-xl rounded-xl m-auto py-2 px-6">Discount Apply</button>
+            <button id="pay-id" class="text-white bg-black text-xl border-2 border-white rounded-xl m-auto px-3">Discount Apply</button>
             <input id="pay-output"  class="text-black bg-orange-100 border-2 border-green-500 text-xl rounded-xl m-auto py-2 px-3" placeholder="Please Pay...">
+        </section>
+        
+        <section>
+            <h1 class="text-5xl text-gray-300 pt-6">Special Coupon Discount</h1>
+            <p class="text-3xl text-pink-400 py-2">Please type the word " DISC60 " to get the sixty percent discount </p>
+            <input id="coupon-amount-id" class="text-2xl border-2 border-yellow-400 bg-emerald-200 rounded-xl" placeholder="Type the Coupon amount here...">
+            <input id="coupon-code-id" class="text-2xl border-2 border-white bg-sky-200 rounded-xl" placeholder="Type the Coupon Code here...">
+            <button id="coupon-Button-id" class="bg-emerald-700 text-xl border-2 border-yellow-400 text-black rounded-xl px-3">Coupon Apply</button>
+            <input id="coupon-Output-id" class="text-3xl border-2 border-pink-400 bg-red-100 rounded-xl" placeholder="Please Pay...">
         </section>
     </main>
         <!--JavaScript-------------------------connection-->
@@ -41,6 +50,35 @@
                     payoutput.value = x;
                 }
             })
+        
+            const Coupon = document.getElementById('coupon-Button-id');
+            Coupon.addEventListener('click', function newCoupone(){
+                const amount = document.getElementById('coupon-amount-id');
+                const amountValue = amount.value;
+                //const amountFloat = parseFloat(amountValue);
+                //
+                const codes = document.getElementById('coupon-code-id');
+                const codesValue = codes.value;
+                const codesFloat = parseFloat(codesValue);
+                //
+                const outputCoupone = document.getElementById('coupon-Output-id');
+                const outputCouponeValue = outputCoupone.value;
+                const outputCouponeFloat = parseFloat(outputCouponeValue);
+
+                if(amountValue !== 'DISC60' || isNaN(codesFloat)){
+                    alert('Please Enter the Code correctly');
+                    amount.value = '';
+                    codes.value = '';
+                }
+                else{
+                    const y = (codesFloat - (codesFloat * 0.6));
+                    outputCoupone.value = y;
+                    amount.value = '';
+                    codes.value = '';
+            
+                }
+            })
+
         </script>
 </body>
 </html>
