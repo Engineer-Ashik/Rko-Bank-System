@@ -13,9 +13,9 @@
             <h1 class="text-yellow-50 text-5xl">Discount</h1>
             <p class="text-yellow-400 text-3xl">Please press the APPLY button for complete the payment</p>
 
-            <input id="pay-input" class="text-black bg-white border-2 border-red-600 text-xl rounded-xl m-auto py-2 px-6" placeholder="Enter Your Amount Here...">
-            <button id="pay-id" class="text-white bg-black text-xl rounded-xl m-auto py-2 px-6">Pay</button>
-            <input id="pay-output"  class="text-black bg-orange-100 border-2 border-green-500 text-xl rounded-xl m-auto py-2 px-3" placeholder="Not paid yet">
+            <input id="pay-input" class="text-black bg-white border-2 border-red-600 text-xl rounded-xl m-auto py-2 px-6" placeholder="Regular Price...">
+            <button id="pay-id" class="text-white bg-black text-xl rounded-xl m-auto py-2 px-6">Discount Apply</button>
+            <input id="pay-output"  class="text-black bg-orange-100 border-2 border-green-500 text-xl rounded-xl m-auto py-2 px-3" placeholder="Please Pay...">
         </section>
     </main>
         <!--JavaScript-------------------------connection-->
@@ -31,10 +31,13 @@
                 const payoutputValue = payoutput.value;
                 const payoutputFloat = parseFloat(payoutputValue);
 
-                if(payinputFloat <= 0)
-                {alert('Enter Valid amount')}
+                if(payinputFloat <= 0 || isNaN(payinputFloat))
+                {
+                    alert('Enter Valid amount')
+                    payoutput.value = '';
+                }
                 else{
-                    const x =( payinputFloat % 10 );
+                    const x =( payinputFloat - (payinputFloat * 0.30) );
                     payoutput.value = x;
                 }
             })
