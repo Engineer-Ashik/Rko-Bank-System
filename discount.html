@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Price-Money</title>
+    <title>Discount-Money</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icofont@1.0.0/dist/icofont.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-slate-700">
     <header></header>
@@ -26,6 +28,36 @@
             <button id="coupon-Button-id" class="bg-emerald-700 text-xl border-2 border-yellow-400 text-black rounded-xl px-3">Coupon Apply</button>
             <input id="coupon-Output-id" class="text-3xl border-2 border-pink-400 bg-red-100 rounded-xl" placeholder="Please Pay...">
         </section>
+
+        <section>
+            <div class="border-4 border-gray-950 bg-cyan-200 p-20">
+                    <h3 class="text-center font-extrabold">My Text Editor</h3>
+                <div class="flex justify-between border-4 border-gray-900 bg-cyan-100 p-20 ">
+                    <div class="flex flex-row gap-6 text-black">
+                        <i class="fa-solid fa-bold"></i>
+                        <i class="fa-solid fa-italic"></i>
+                        <i class="fa-solid fa-underline"></i>
+                    </div>
+                    <div class="flex flex-row gap-6">
+                        <i class="fa-solid fa-align-right"></i>
+                        <i class="fa-solid fa-align-left"></i>
+                        <i class="fa-solid fa-align-justify"></i>
+                        <i class="fa-solid fa-align-center"></i>
+                    </div>
+                    <div>
+                        <i class="icofont-font"></i>
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                </div>
+                    <input class="border-4 border-gray-900 bg-gray-100 w-full p-24">
+            </div>
+        </section>
+        <!--Last ----------------------------------------- Portion-->
+        <div>
+            <button id="next-again" class="bg-pink-700 text-black text-3xl font-extrabold rounded-lg bg-cover mr-10 flex m-auto p-2 hover:bg-red-600">Home</button>
+        </div>
+
+        
     </main>
         <!--JavaScript-------------------------connection-->
         <script>
@@ -78,6 +110,12 @@
             
                 }
             })
+
+            const nextAgain = document.getElementById('next-again');
+            nextAgain.addEventListener('click',function(){
+                window.location.href= "home.html"
+            })
+
 
         </script>
 </body>
